@@ -448,6 +448,90 @@
 
     }
 
+/* FINAL CONTACT SECTION */
+
+.final-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.final-contact-text {
+  flex: 1;
+}
+
+.final-contact-text h2 {
+  margin-bottom: 16px;
+}
+
+.final-contact-text p {
+  max-width: 550px;
+  margin-bottom: 22px;
+}
+
+.final-contact-image {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-contact-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+
+@media (max-width: 700px) {
+  .final-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
+
+  .final-contact-text {
+    width: 100%;
+  }
+
+  .final-contact-image {
+    order: 2;
+    flex: none;
+    width: auto;
+    position: absolute;
+  }
+
+  .final-contact {
+    position: relative;
+  }
+
+  .final-contact-text .contact-btn {
+    margin-right: 20px;
+  }
+
+  .final-contact-image img {
+    width: 185px;
+    height: 185px;
+    object-fit: contain;
+  }
+
+  .final-contact-image {
+    right: -14px;
+    bottom: -17px;
+  }
+}
+
+
+
+
   </style>
 </head>
 
@@ -717,6 +801,42 @@
             </div>
 
           </div>
+
+           <div class="skill-group">
+
+            <h4>
+             UX/UI Designer
+            </h4>
+
+            <div class="tags">
+
+              <span>UX Design </span>
+              <span>User Research</span>
+              <span>User Personas</span>
+              <span>User Journey Mapping</span>
+              <span>Information Architecture</span>
+              <span>User Flows</span>
+              <span>UI Design</span>
+               <span>Visual Design</span>
+               <span>Typography & Color Theory</span>
+              <span>Layout & Spacing</span>
+               <span>Design Systems</span>
+
+                <span>Responsive Design</span>
+               <span>Accessibility (WCAG)</span>
+              <span>Prototyping & Testing</span>
+               <span>Interactive Prototyping</span>
+
+               <span>Usability Testing</span>
+               <span>User Feedback Analysis</span>
+              <span>Iterative Design</span>
+               <span>Figma</span>
+               <span>Sketch</span>
+            </div>
+
+          </div>
+
+
           <div class="skill-group">
 
             <h4>
@@ -772,7 +892,8 @@
               <span>Debugging</span>
               <span>Testing</span>
               <span>Visual Studio Code</span>
-              
+              <span>OAuth  </span>
+              <span>JWT</span>
 
             </div>
 
@@ -1099,6 +1220,9 @@
 
             <span>SwiftUI</span>
             <span>Swift</span>
+            <span>Sketch</span>
+            <span>UI Design</span>
+            <span>UX Design</span>
             <span>Core ML</span>
             <span>NLP</span>
             <span>AI</span>
@@ -1146,12 +1270,15 @@
 
             <span>SwiftUI</span>
             <span>Swift</span>
+            <span>Figma</span>
+            <span>UI Design</span>
+            <span>UX Design</span>
             <span>Firebase</span>
             <span>Clouding </span>
             <span>Core ML</span>
             <span>AI </span>
             <span>Machine Learning</span>
-            <span>3D</span>
+            <span>3D Modeling</span>
             <span>team work </span>
 
           </div>
@@ -1202,6 +1329,9 @@
 
             <span>SwiftUI</span>
             <span>Swift</span>
+            <span>Sketch</span>
+            <span>UI Design</span>
+            <span>UX Design</span>
             <span>Team Project</span>
 
           </div>
@@ -1231,7 +1361,9 @@
             <span>SwiftUI</span>
             <span>Swift</span>
             <span>Accessibility</span>
-            
+            <span>Sketch</span>
+            <span>UI Design</span>
+            <span>UX Design</span>
 
           </div>
             <div class="project-links">
@@ -1285,6 +1417,8 @@
             <span>Security</span>
             <span>postman </span>
             <span>GET | POST | PUT | DELETE </span>
+             <span>OAuth  </span>
+              <span>JWT</span>
 
           </div>
 
@@ -1315,6 +1449,9 @@
             
             <span>swift</span>
             <span>swiftUI</span>
+            <span>Sketch</span>
+            <span>UI Design</span>
+            <span>UX Design</span>
             <span>Educational</span>
             <span>Game</span>
             <span>Saudi Culture</span>
@@ -1509,7 +1646,7 @@
          FINAL CONTACT
     ========================== -->
 
-    <section class="card">
+    <!-- <section class="card">
 
       <h2>
         LET'S CONNECT
@@ -1522,12 +1659,38 @@
 
       <button
         class="contact-btn"
-        onclick="window.location.href='mailto:wed.alasiri2025@gmail.com'"
+        onclick="window.location.href='mailto:wedalasiri2025@gmail.com'"
       >
         Get In Touch
       </button>
 
-    </section>
+    </section> -->
+
+<!-- FINAL CONTACT -->
+<section class="card final-contact">
+
+  <div class="final-contact-text">
+    <h2>LET'S CONNECT</h2>
+
+    <p>
+      Interested in software engineering, iOS development,
+      cybersecurity, AI, and building secure digital products.
+    </p>
+
+    <a
+      class="contact-btn"
+      href="mailto:wedalasiri2025@gmail.com"
+    >
+      Get In Touch
+    </a>
+  </div>
+
+  <div class="final-contact-image">
+    <img src="images/Screenshot 1448-05-15 at 20.40.47 Background Removed.png" alt="Wed Alasiri">
+  </div>
+
+</section>
+
 
 
     <!-- FOOTER -->

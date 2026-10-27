@@ -530,6 +530,93 @@
 }
 
 
+/* CELEBRATION BUTTON EFFECT */
+
+.contact-btn {
+  position: relative;
+  overflow: visible;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(29, 161, 242, 0.4);
+}
+
+.contact-btn.celebrating {
+  animation: buttonCelebrate 0.45s ease;
+}
+
+@keyframes buttonCelebrate {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.08);
+  }
+  65% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.confetti-piece {
+  position: fixed;
+  width: 8px;
+  height: 12px;
+  pointer-events: none;
+  z-index: 99999;
+  border-radius: 2px;
+  animation: confettiFly 900ms ease-out forwards;
+}
+
+@keyframes confettiFly {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate(var(--move-x), var(--move-y))
+      rotate(var(--rotate))
+      scale(0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-btn.celebrating,
+  .confetti-piece {
+    animation-duration: 0.01ms;
+  }
+}
+
+
+
+
+/* View My CV hover color */
+.contact-btn.cv-btn:hover {
+  background: #444446 !important;
+  opacity: 1;
+}
+
+
+
+.certificate-link {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.certificate-link:hover {
+  color: #1da1f2;
+  text-decoration: underline;
+}
+
 
 
   </style>
@@ -609,22 +696,34 @@
           Phone: +966 55 205 8766
         </p>
 
-        <button
+        <!-- <button
           class="contact-btn"
           onclick="window.location.href='mailto:wedalasiri2025@gmail.com'"
         >
           Send an Email
-        </button>
+        </button> -->
+
+<button
+  class="contact-btn"
+  onclick="celebrateButton(event); window.location.href='mailto:wedalasiri2025@gmail.com'"
+>
+  Send an Email
+</button>
 
        
+
+
 <a
-  class="contact-btn"
-  style="margin-top:12px;background:#2a2b31"
+  class="contact-btn cv-btn"
+  style="margin-top:12px;background:#2a2b31;font-weight:normal"
   href="images/Wed-Alasiri-CV4.pdf"
   download="Wed-Alasiri-CV.pdf"
+  onclick="celebrateButton(event)"
 >
   View My CV
 </a>
+
+
 
 
       </div>
@@ -1370,6 +1469,7 @@
             <span>UX Design</span>
 
           </div>
+
             <div class="project-links">
 
             <a
@@ -1504,14 +1604,20 @@
             analysis, and security findings documentation.
           </p>
 
-          <div class="tags">
+          
+<div class="tags">
+  <span>Penetration Testing</span>
+  <span>Vulnerability Assessment</span>
+  <span>Application Security</span>
+  <span>Web Security</span>
+  <span>Burp Suite</span>
+  <span>OWASP ZAP</span>
+  <span>Kali Linux</span>
+  <span>HTTP Request Analysis</span>
+  <span>Risk Assessment</span>
+  <span>Threat Analysis</span>
+</div>
 
-            <span>Burp Suite</span>
-            <span>OWASP ZAP</span>
-            <span>Web Security</span>
-            <span>Vulnerability Assessment</span>
-
-          </div>
 
         </div>
 
@@ -1521,7 +1627,7 @@
         <div class="project-card">
 
           <img
-            src="https://images.unsplash.com/photo-1510511450819-1c1a7b4b6c9f"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmHggnelMYrmpihSPWRWAFsbCeCm5HRbIQGUEVKZH3g&s"
             alt="Network Security"
           >
 
@@ -1535,13 +1641,19 @@
             between networks.
           </p>
 
-          <div class="tags">
+          
+<div class="tags">
+  <span>Network Security</span>
+  <span>Firewalls & ACLs</span>
+  <span>Networking Fundamentals</span>
+  <span>TCP/IP & OSI Model</span>
+  <span>IPv4/IPv6 Addressing & Subnetting</span>
+  <span>Routing & Switching</span>
+  <span>Network Troubleshooting</span>
+  <span>Cisco Packet Tracer</span>
+  <span>Risk Assessment</span>
+</div>
 
-            <span>Firewall</span>
-            <span>ACL</span>
-            <span>Network Security</span>
-
-          </div>
 
         </div>
 
@@ -1551,7 +1663,7 @@
         <div class="project-card">
 
           <img
-            src="https://images.unsplash.com/photo-1504639725590-34d0984388bd"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9MVnyZQ4SOdxFyhbewId0psINugkBlBRyHS6uTloZKA&s=10"
             alt="VPN"
           >
 
@@ -1564,13 +1676,19 @@
             remote networks using Cisco technologies.
           </p>
 
-          <div class="tags">
+         
+<div class="tags">
+  <span>Network Security</span>
+  <span>VPN Fundamentals</span>
+  <span>Site-to-Site VPN</span>
+  <span>Cryptography</span>
+  <span>TCP/IP & OSI Model</span>
+  <span>Static & Dynamic Routing</span>
+  <span>Routing & Switching</span>
+  <span>Firewalls & ACLs</span>
+  <span>Cisco Packet Tracer</span>
+</div>
 
-            <span>VPN</span>
-            <span>Cisco</span>
-            <span>Network Security</span>
-
-          </div>
 
         </div>
 
@@ -1580,7 +1698,7 @@
         <div class="project-card">
 
           <img
-            src="https://images.unsplash.com/photo-1504639725590-34d0984388bd"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ERkGrkHSAy-hEqnpOrFCdn1aYVk916Q79_-7CC3q9A&s=10"
             alt="Network Infrastructure"
           >
 
@@ -1594,12 +1712,68 @@
             through DHCP and DNS services.
           </p>
 
-          <div class="tags">
+         
+<div class="tags">
+  <span>Network Security</span>
+  <span>VPN Fundamentals</span>
+  <span>Site-to-Site VPN</span>
+  <span>Cryptography</span>
+  <span>TCP/IP & OSI Model</span>
+  <span>Static & Dynamic Routing</span>
+  <span>Routing & Switching</span>
+  <span>Firewalls & ACLs</span>
+  <span>Cisco Packet Tracer</span>
+</div>
 
-            <span>TCP/IP</span>
-            <span>DHCP</span>
-            <span>DNS</span>
-            <span>Networking</span>
+
+
+        </div>
+
+
+        <div class="project-card">
+
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNjIZwEDdJ-bFGdOkjl6b74E--qAKcQNdUC4DlNJy3DVTfd8JXkfk0PJA&s=10"
+            alt="Network Infrastructure"
+          >
+
+          <h3>
+           SecureLens — Web & API Security Assessment Tool
+          </h3>
+
+          <p>
+            Developed a Python-based security assessment tool for identifying common web and API security misconfigurations and generating risk-based security reports.
+          </p>
+
+          
+<div class="tags">
+  <span>Python</span>
+  <span>Application Security</span>
+  <span>API Security</span>
+  <span>Web Security</span>
+  <span>Vulnerability Assessment</span>
+  <span>Penetration Testing</span>
+  <span>REST APIs</span>
+  <span>JSON</span>
+  <span>Risk Assessment</span>
+  <span>Threat Analysis</span>
+  <span>Secure Software Development</span>
+  <span>Git</span>
+  <span>GitHub</span>
+</div>
+
+<div>
+            <div class="project-links">
+
+            <P
+             
+              target="_blank"
+              class="project-btn"
+            >
+              still working on it
+            </P>
+
+           
 
           </div>
 
@@ -1618,7 +1792,7 @@
     <section class="grid grid-2">
 
 
-      <div class="card">
+      <!-- <div class="card">
 
         <h3>
           Certifications
@@ -1628,7 +1802,27 @@
           Project Management Professional (PMP)
         </p>
 
-      </div>
+      </div> -->
+
+<div class="card">
+
+  <h3>
+    Certifications
+  </h3>
+
+  <p>
+    <a
+      href="images/1769799800152.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="certificate-link"
+    >
+      Project Management Professional (PMP)
+    </a>
+  </p>
+
+</div>
+
 
 
       <div class="card">
@@ -1681,12 +1875,21 @@
       cybersecurity, AI, and building secure digital products.
     </p>
 
-    <a
+    <!-- <a
       class="contact-btn"
       href="mailto:wedalasiri2025@gmail.com"
     >
       Get In Touch
-    </a>
+    </a> -->
+
+<a
+  class="contact-btn"
+  href="mailto:wedalasiri2025@gmail.com"
+  onclick="celebrateButton(event)"
+>
+  Get In Touch
+</a>
+
   </div>
 
   <div class="final-contact-image">
@@ -1720,6 +1923,67 @@
         alert("Arabic version coming soon.");
 
       });
+
+
+
+function celebrateButton(event) {
+  const button = event.currentTarget;
+
+  // Animate the clicked button
+  button.classList.remove("celebrating");
+  void button.offsetWidth;
+  button.classList.add("celebrating");
+
+  // Generate colorful confetti
+  const rect = button.getBoundingClientRect();
+  const colors = [
+    "#1da1f2",
+    "#7c4dff",
+    "#00e5a8",
+    "#ffd166",
+    "#ff5c8a"
+  ];
+
+  for (let i = 0; i < 24; i++) {
+    const piece = document.createElement("span");
+
+    piece.className = "confetti-piece";
+    piece.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    piece.style.left =
+      rect.left + rect.width / 2 + "px";
+
+    piece.style.top =
+      rect.top + rect.height / 2 + "px";
+
+    piece.style.setProperty(
+      "--move-x",
+      (Math.random() - 0.5) * 220 + "px"
+    );
+
+    piece.style.setProperty(
+      "--move-y",
+      (Math.random() - 0.7) * 200 + "px"
+    );
+
+    piece.style.setProperty(
+      "--rotate",
+      Math.random() * 720 + "deg"
+    );
+
+    document.body.appendChild(piece);
+
+    piece.addEventListener("animationend", () => {
+      piece.remove();
+    });
+  }
+
+  // Clean up the button animation
+  setTimeout(() => {
+    button.classList.remove("celebrating");
+  }, 500);
+}
 
   </script>
 

@@ -619,6 +619,106 @@
 
 
 
+
+/* CV CHOICE POPUP */
+.cv-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cv-modal.show {
+  display: flex;
+  animation: cvFadeIn 0.25s ease;
+}
+
+.cv-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 32px 24px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.cv-modal-content h2 {
+  color: var(--text);
+  font-size: 23px;
+  margin: 0 0 10px;
+}
+
+.cv-modal-content p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.cv-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.cv-close:hover {
+  color: var(--text);
+}
+
+.cv-choice-btn {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 12px;
+  padding: 14px 18px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cv-choice-btn:hover {
+  background: #1686cc;
+  transform: translateY(-2px);
+}
+
+@keyframes cvFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-modal-content {
+    padding: 30px 20px;
+  }
+
+  .cv-modal-content h2 {
+    font-size: 21px;
+  }
+}
+
   </style>
 </head>
 
@@ -713,15 +813,45 @@
        
 
 
+
 <a
   class="contact-btn cv-btn"
   style="margin-top:12px;background:#2a2b31;font-weight:normal"
-  href="images/Wed-Alasiri-CV4.pdf"
-  download="Wed-Alasiri-CV.pdf"
-  onclick="celebrateButton(event)"
+  href="#"
+  onclick="event.preventDefault(); celebrateButton(event); openCVModal();"
 >
   View My CV
 </a>
+
+<!-- CV CHOICE POPUP -->
+<div id="cvModal" class="cv-modal" onclick="closeCVModalOutside(event)">
+  <div class="cv-modal-content">
+    <button class="cv-close" onclick="closeCVModal()" aria-label="Close">&times;</button>
+
+    <h2>Choose Your CV</h2>
+    <p>Select the version that matches the role you're applying for.</p>
+
+    <a
+      class="contact-btn cv-choice-btn"
+      href="images/Cybersecurity and AI Resume.pdf"
+    "
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Cybersecurity CV
+    </a>
+
+    <a
+      class="contact-btn cv-choice-btn"
+      href="images/Wed_Alasiri_CV_Software engineer  2.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Software Engineering CV
+    </a>
+  </div>
+</div>
+
 
 
 
@@ -1984,6 +2114,28 @@ function celebrateButton(event) {
     button.classList.remove("celebrating");
   }, 500);
 }
+
+
+
+function openCVModal() {
+  document.getElementById("cvModal").classList.add("show");
+}
+
+function closeCVModal() {
+  document.getElementById("cvModal").classList.remove("show");
+}
+
+function closeCVModalOutside(event) {
+  if (event.target.id === "cvModal") {
+    closeCVModal();
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeCVModal();
+  }
+});
 
   </script>
 
